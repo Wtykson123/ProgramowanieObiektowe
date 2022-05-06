@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 D:\Users\Kamil.Zydlo\Desktop\ProgramowanieObiektowe\lab2\lab2\lab2\bin\Debug\net5.0\lab2.exe
 D:\Users\Kamil.Zydlo\Desktop\ProgramowanieObiektowe\lab2\lab2\lab2\bin\Debug\net5.0\lab2.deps.json
 D:\Users\Kamil.Zydlo\Desktop\ProgramowanieObiektowe\lab2\lab2\lab2\bin\Debug\net5.0\lab2.runtimeconfig.json
@@ -14,3 +15,21 @@ D:\Users\Kamil.Zydlo\Desktop\ProgramowanieObiektowe\lab2\lab2\lab2\obj\Debug\net
 D:\Users\Kamil.Zydlo\Desktop\ProgramowanieObiektowe\lab2\lab2\lab2\obj\Debug\net5.0\ref\lab2.dll
 D:\Users\Kamil.Zydlo\Desktop\ProgramowanieObiektowe\lab2\lab2\lab2\obj\Debug\net5.0\lab2.pdb
 D:\Users\Kamil.Zydlo\Desktop\ProgramowanieObiektowe\lab2\lab2\lab2\obj\Debug\net5.0\lab2.genruntimeconfig.cache
+=======
+D:\Users\Kamil.Zydlo\Desktop\ProgramowanieObiektowe\lab2\lab2\lab2\bin\Debug\net5.0\lab2.exe
+D:\Users\Kamil.Zydlo\Desktop\ProgramowanieObiektowe\lab2\lab2\lab2\bin\Debug\net5.0\lab2.deps.json
+D:\Users\Kamil.Zydlo\Desktop\ProgramowanieObiektowe\lab2\lab2\lab2\bin\Debug\net5.0\lab2.runtimeconfig.json
+D:\Users\Kamil.Zydlo\Desktop\ProgramowanieObiektowe\lab2\lab2\lab2\bin\Debug\net5.0\lab2.runtimeconfig.dev.json
+D:\Users\Kamil.Zydlo\Desktop\ProgramowanieObiektowe\lab2\lab2\lab2\bin\Debug\net5.0\lab2.dll
+D:\Users\Kamil.Zydlo\Desktop\ProgramowanieObiektowe\lab2\lab2\lab2\bin\Debug\net5.0\ref\lab2.dll
+D:\Users\Kamil.Zydlo\Desktop\ProgramowanieObiektowe\lab2\lab2\lab2\bin\Debug\net5.0\lab2.pdb
+D:\Users\Kamil.Zydlo\Desktop\ProgramowanieObiektowe\lab2\lab2\lab2\obj\Debug\net5.0\lab2.csproj.AssemblyReference.cache
+D:\Users\Kamil.Zydlo\Desktop\ProgramowanieObiektowe\lab2\lab2\lab2\obj\Debug\net5.0\lab2.GeneratedMSBuildEditorConfig.editorconfig
+D:\Users\Kamil.Zydlo\Desktop\ProgramowanieObiektowe\lab2\lab2\lab2\obj\Debug\net5.0\lab2.AssemblyInfoInputs.cache
+D:\Users\Kamil.Zydlo\Desktop\ProgramowanieObiektowe\lab2\lab2\lab2\obj\Debug\net5.0\lab2.AssemblyInfo.cs
+D:\Users\Kamil.Zydlo\Desktop\ProgramowanieObiektowe\lab2\lab2\lab2\obj\Debug\net5.0\lab2.csproj.CoreCompileInputs.cache
+D:\Users\Kamil.Zydlo\Desktop\ProgramowanieObiektowe\lab2\lab2\lab2\obj\Debug\net5.0\lab2.dll
+D:\Users\Kamil.Zydlo\Desktop\ProgramowanieObiektowe\lab2\lab2\lab2\obj\Debug\net5.0\ref\lab2.dll
+D:\Users\Kamil.Zydlo\Desktop\ProgramowanieObiektowe\lab2\lab2\lab2\obj\Debug\net5.0\lab2.pdb
+D:\Users\Kamil.Zydlo\Desktop\ProgramowanieObiektowe\lab2\lab2\lab2\obj\Debug\net5.0\lab2.genruntimeconfig.cache
+>>>>>>> 20a94b11db97ee0397c0cd48574142054d95e370

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "version": 2,
   "dgSpecHash": "8Ks4oLjnSD5TdqVg4xybYoCFWYwkZ0556VnYwsphTQ/ehD+aXkcbh0+l0SPVsbrSDQo9F+zEFNBp0Jf/BVPBLA==",
@@ -5,4 +6,13 @@
   "projectFilePath": "D:\\Users\\Kamil.Zydlo\\Desktop\\ProgramowanieObiektowe\\lab2\\lab2\\lab2\\lab2.csproj",
   "expectedPackageFiles": [],
   "logs": []
+=======
+{
+  "version": 2,
+  "dgSpecHash": "8Ks4oLjnSD5TdqVg4xybYoCFWYwkZ0556VnYwsphTQ/ehD+aXkcbh0+l0SPVsbrSDQo9F+zEFNBp0Jf/BVPBLA==",
+  "success": true,
+  "projectFilePath": "D:\\Users\\Kamil.Zydlo\\Desktop\\ProgramowanieObiektowe\\lab2\\lab2\\lab2\\lab2.csproj",
+  "expectedPackageFiles": [],
+  "logs": []
+>>>>>>> 20a94b11db97ee0397c0cd48574142054d95e370
 }
