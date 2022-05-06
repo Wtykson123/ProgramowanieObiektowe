@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -164,58 +164,48 @@ namespace lab_06
                 },
 
             };
-            Console.WriteLine("Ilość rekordów w tablicy:");
+                Console.WriteLine("\u001b[31m1.Ilość rekordów w tablicy:\u001b[0m");
             Console.WriteLine((from user in users select user).Count());
 
-            Console.WriteLine("-----------------");
-            Console.WriteLine("Listę nazw użytkowników:");
-            List<string> names = users.Select(user => user.Name).ToList();
-            List<string> names2 = (from user in users select user.Name).ToList();
+                Console.WriteLine("\u001b[31m2.Listę nazw użytkowników:\u001b[0m");
+            List<string> nazwa = users.Select(user => user.Name).ToList();
+             List<string> nazwa2 = (from user in users select user.Name).ToList();
 
-            foreach (string name in names)
+            foreach (string name in nazwa)
             {
                 Console.WriteLine(name);
             }
-            Console.WriteLine("-----------------");
-            Console.WriteLine("Posortowanych użytkowników po nazwach:");
-            List<User> users_1 = (from user in users
+                Console.WriteLine("\u001b[31m3.Posortowanych użytkowników po nazwach:\u001b[0m");
+            List<User> uztykownik1 = (from user in users
                                   orderby user.Name
                                   select user).ToList();
 
-            foreach (User user in users_1)
+            foreach (User user in uztykownik1)
             {
                 Console.WriteLine(user.Name);
             }
+       
+            Console.WriteLine("\u001b[31m4.Listę dostępnych ról użytkowników:\u001b[0m");
 
-            Console.WriteLine("-----------------");
-            Console.WriteLine("Listę dostępnych ról użytkowników:");
-
-            List<string> roles = users.Select(user => user.Role).Distinct().ToList();
+                     List<string> roles = users.Select(user => user.Role).Distinct().ToList();
 
             foreach (string role in roles)
             {
                 Console.WriteLine(role);
             }
-            Console.WriteLine("-----------------");
-            Console.WriteLine("Listy pogrupowanych użytkowników po rolach:");
-            List<User> namesbyrole = (from user in users orderby user.Role select user).ToList();
+            Console.WriteLine("\u001b[31m5.Listy pogrupowanych użytkowników po rolach:\u001b[0m");
+            List<User> nazwarole = (from user in users orderby user.Role select user).ToList();
 
-            foreach (User user in namesbyrole)
+            foreach (User user in nazwarole)
             {
                 Console.WriteLine(user.Role + " " + user.Name);
             }
+            Console.WriteLine("\u001b[31m6.Ilość rekordów, dla których podano oceny :\u001b[0m");
 
-
-            Console.WriteLine("-----------------");
-            Console.WriteLine("Ilość rekordów, dla których podano oceny :");
-
-            var count = (from user in users where user.Marks != null || user.Marks?.Length > 0 select user.Name);
+                        var count = (from user in users where user.Marks != null || user.Marks?.Length > 0 select user.Name);
             Console.WriteLine(count.Count());
 
-
-            Console.WriteLine("-----------------");
-
-            Console.WriteLine("Sumę, ilość i średnią wszystkich ocen studentów");
+            Console.WriteLine("\u001b[31m7.Sumę, ilość i średnią wszystkich ocen studentów:\u001b[0m");
 
 
             List<int[]> oceny = (from user in users where user.Marks != null || user.Marks?.Length > 0 select user.Marks).ToList();
@@ -224,9 +214,9 @@ namespace lab_06
             int iloscocen = 0;
 
 
-            foreach (int[] ele in oceny)
+            foreach (int[] abc in oceny)
             {
-                foreach (int ocena in ele)
+                foreach (int ocena in abc)
                 {
                     iloscocen++;
                     suma += ocena;
@@ -235,16 +225,13 @@ namespace lab_06
 
 
             var srednia = (float)(suma / iloscocen);
-            Console.WriteLine($"Suma ocen {suma}");
-            Console.WriteLine($"Ilosc ocen {iloscocen}");
-            Console.WriteLine($"Srednia {srednia}");
+            Console.WriteLine($"\u001b[31mSuma ocen:\u001b[0m {suma}");
 
+            Console.WriteLine($"\u001b[31mIlosc ocen: \u001b[0m{iloscocen}");
 
+            Console.WriteLine($"\u001b[31mSrednia:\u001b[0m {srednia}");
 
-
-
-            Console.WriteLine("-----------------");
-            Console.WriteLine("Najlepsza ocenę");
+            Console.WriteLine("\u001b[31mNajlepsza ocenę:\u001b[0m");
 
 
             int max = 0;
@@ -263,9 +250,7 @@ namespace lab_06
 
             Console.WriteLine(max);
 
-
-            Console.WriteLine("-----------------");
-            Console.WriteLine("Najgorsza ocena");
+            Console.WriteLine("\u001b[31m9.Najgorsza ocena\u001b[0m");
 
             int min = max;
             foreach (int[] ele in oceny)
@@ -281,136 +266,86 @@ namespace lab_06
                 }
             }
             Console.WriteLine(min);
-
-            Console.WriteLine("-----------------");
-            Console.WriteLine("Najlepszy student:");
+            Console.WriteLine("\u001b[31m10.Najlepszy student:\u001b[0m");
 
             List<User> xs = (from user in users where user.Marks != null || user.Marks?.Length > 0 select user).ToList();
 
             float sum = 0;
             float licznik = 0;
 
-            float maxsr = 0;
-            var name1 = "Nicola";
+            float sredniamax = 0;
+            var uzyt1 = "Nicola";
             foreach (User user in xs)
             {
-                foreach (int oc in user.Marks)
+                foreach (int gc in user.Marks)
                 {
-                    sum += oc;
+                    sum += gc;
                     licznik++;
                 }
-                float sr = sum / licznik;
+                float sred = sum / licznik;
 
-                if (sr > maxsr)
+                if (sred > sredniamax)
                 {
-                    maxsr = sr;
-                    name1 = user.Name;
+                    sredniamax = sred;
+                    uzyt1 = user.Name;
                 }
 
                 licznik = 0;
                 sum = 0;
             }
-            Console.WriteLine($"{name1}" + " " + maxsr);
+            Console.WriteLine($"{uzyt1}" + " " + sredniamax);
 
-
-
-            Console.WriteLine("-----------------");
-            Console.WriteLine("Listę studentów, którzy posiadają conajmniej ocen");
-            int minOc = 100000;
-            int licznikOc1 = 0;
+            Console.WriteLine("\u001b[31m11.Listę studentów, którzy posiadają conajmniej ocen\u001b[0m");
+            int minimin = 100000;
+            int licznis = 0;
 
             foreach (User user in xs)
             {
                 foreach (int oc in user.Marks)
                 {
-                    licznikOc1++;
+                    licznis++;
                 }
 
-                if (licznikOc1 < minOc)
+                if (licznis < minimin)
                 {
-                    minOc = licznikOc1;
+                    minimin = licznis;
                 }
 
-                licznikOc1 = 0;
+                licznis = 0;
 
             }
 
-            List<string> names3 = (from user in users where user.Marks?.Length == minOc select user.Name).ToList();
+            List<string> names3 = (from user in users where user.Marks?.Length == minimin select user.Name).ToList();
             foreach (string name in names3)
             {
                 Console.WriteLine(name);
             }
 
 
+            Console.WriteLine("\u001b[31m13.Listę obiektów zawierających tylko nazwę i średnią ocenę\u001b[0m");
 
 
-            Console.WriteLine("-----------------");
-            Console.WriteLine("Listę studentów, którzy posiadają najwięcej ocen");
-            int maxOc = 0;
-            int licznikOc2 = 0;
-            foreach (User user in xs)
+            List<User> nazwauzyt5 = (from user in users where user.Marks != null || user.Marks?.Length > 0 select user).ToList();
+
+            int[] srednie = new int[nazwauzyt5.Count];
+            int b = 0;
+            foreach (User user in nazwauzyt5)
             {
-                foreach (int oc in user.Marks)
-                {
-                    licznikOc2++;
-                }
 
-                if (licznikOc2 > maxOc)
-                {
-                    maxOc = licznikOc2;
-                }
+                float srednia2 = (float)user.Marks.Sum() / user.Marks.Length;
 
 
-                licznikOc2 = 0;
-
+                Console.WriteLine(user.Name + " " + $"{srednia2:N2}");
+                srednie[b] = (int)srednia2;
 
             }
 
-            List<string> names4 = (from user in users where user.Marks?.Length == maxOc select user.Name).ToList();
+           
+            Console.WriteLine("\u001b[31m15.Średnią ocenę wszystkich studentów\u001b[0m");
 
-            foreach (string name in names4)
-            {
-                Console.WriteLine(name);
-            }
+            List<User> uztk = (from user in users where user.Marks != null || user.Marks?.Length > 0 orderby ((float)user.Marks.Sum() / user.Marks.Length) descending select user).ToList();
 
-
-
-            Console.WriteLine("-----------------");
-            Console.WriteLine("Listę obiektów zawierających tylko nazwę i średnią ocenę");
-
-
-            List<User> names5 = (from user in users where user.Marks != null || user.Marks?.Length > 0 select user).ToList();
-
-            int[] srednie = new int[names5.Count];
-            int z = 0;
-            foreach (User user in names5)
-            {
-
-                float sr = (float)user.Marks.Sum() / user.Marks.Length;
-
-
-                Console.WriteLine(user.Name + " " + $"{sr:N2}");
-                srednie[z] = (int)sr;
-
-            }
-
-
-            Console.WriteLine("-----------------");
-            Console.WriteLine("Studentów posortowanych od najlepszego");
-
-            List<User> names6 = (from user in users where user.Marks != null || user.Marks?.Length > 0 select new User { Name = user.Name, Marks = srednie }).ToList();
-            List<User> Mapowanie = new List<User>();
-            for (int i = 0; i < srednie.Length; i++)
-            {
-                Mapowanie = (from user in users where user.Marks != null || user.Marks?.Length > 0 select new User { Name = user.Name, Marks = new int[] { srednie[i] } }).ToList();
-            }
-
-            Console.WriteLine("-----------------");
-            Console.WriteLine("Średnią ocenę wszystkich studentów");
-
-            List<User> names11 = (from user in users where user.Marks != null || user.Marks?.Length > 0 orderby ((float)user.Marks.Sum() / user.Marks.Length) descending select user).ToList();
-
-            foreach (User user in names11)
+            foreach (User user in uztk)
             {
 
                 float sr = (float)user.Marks.Sum() / user.Marks.Length;
@@ -420,46 +355,30 @@ namespace lab_06
 
             }
 
-
-
-            Console.WriteLine("-----------------");
-            Console.WriteLine("Listę użytkowników pogrupowanych po miesiącach daty utworzenia ");
+            Console.WriteLine("\u001b[31m16.Listę użytkowników pogrupowanych po miesiącach daty utworzenia:\u001b[0m ");
 
             List<User> usersSorted = users.OrderByDescending(user => user.CreatedAt).ToList();
-            string[] XSXS = new string[usersSorted.Count];
+            string[] qwer = new string[usersSorted.Count];
             foreach (var user in usersSorted)
             {
-                var m = user.CreatedAt;
-                var y = user.CreatedAt;
+                var sss = user.CreatedAt;
+                var bbb = user.CreatedAt;
 
-                string my = m.ToString().Substring(3, 2) + "/" + y.ToString().Substring(6, 4);
+                string my = sss.ToString().Substring(3, 2) + "/" + bbb.ToString().Substring(6, 4);
 
                 Console.WriteLine(my + " " + user.Name);
 
             }
 
 
+            Console.WriteLine("\u001b[31m18.Najnowszy studenta\u001b[0m");
 
-            Console.WriteLine("-----------------");
-            Console.WriteLine("Listę użytkowników, którzy nie zostali usunięci");
-
-            List<string> usersNotDeleted = (from user in users where user.RemovedAt == null select user.Name).ToList();
-
-            foreach (string nd in usersNotDeleted)
-            {
-                Console.WriteLine(nd);
-            }
-
-
-            Console.WriteLine("-----------------");
-            Console.WriteLine("Najnowszy studenta");
-
-            var newest = DateTime.Now;
+            var najnowszy = DateTime.Now;
             foreach (var user in usersSorted)
             {
-                if (newest < user.CreatedAt)
+                if (najnowszy < user.CreatedAt)
                 {
-                    newest = (DateTime)user.CreatedAt;
+                    najnowszy = (DateTime)user.CreatedAt;
                     Console.WriteLine(user.Name + " " + user.CreatedAt);
                 }
             }
