@@ -266,61 +266,7 @@ namespace lab_06
                 }
             }
             Console.WriteLine(min);
-            Console.WriteLine("\u001b[31m10.Najlepszy student:\u001b[0m");
-
-            List<User> xs = (from user in users where user.Marks != null || user.Marks?.Length > 0 select user).ToList();
-
-            float sum = 0;
-            float licznik = 0;
-
-            float sredniamax = 0;
-            var uzyt1 = "Nicola";
-            foreach (User user in xs)
-            {
-                foreach (int gc in user.Marks)
-                {
-                    sum += gc;
-                    licznik++;
-                }
-                float sred = sum / licznik;
-
-                if (sred > sredniamax)
-                {
-                    sredniamax = sred;
-                    uzyt1 = user.Name;
-                }
-
-                licznik = 0;
-                sum = 0;
-            }
-            Console.WriteLine($"{uzyt1}" + " " + sredniamax);
-
-            Console.WriteLine("\u001b[31m11.Listę studentów, którzy posiadają conajmniej ocen\u001b[0m");
-            int minimin = 100000;
-            int licznis = 0;
-
-            foreach (User user in xs)
-            {
-                foreach (int oc in user.Marks)
-                {
-                    licznis++;
-                }
-
-                if (licznis < minimin)
-                {
-                    minimin = licznis;
-                }
-
-                licznis = 0;
-
-            }
-
-            List<string> names3 = (from user in users where user.Marks?.Length == minimin select user.Name).ToList();
-            foreach (string name in names3)
-            {
-                Console.WriteLine(name);
-            }
-
+           
 
             Console.WriteLine("\u001b[31m13.Listę obiektów zawierających tylko nazwę i średnią ocenę\u001b[0m");
 
