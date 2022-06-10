@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,89 +6,104 @@ using System.Threading.Tasks;
 
 namespace lab2
 {
+    public class Person
+    {
+        private string name;
+        private int age;
+        public string Name { get => name; }
+        public int Age { get => age; }
+        public Person(string name, int age)
+        {
+            this.name = name;
+            this.age = age;
+        }
+
+        public bool Equals(Person other)
+        {
+            return name == other.Name && age == other.Age;
+        }
+        public override string ToString()
+        {
+            return $"{name} {age}";
+        }
+    }
+    public class Task
+    {
+        private string name;
+
+        public string Name { get => name; }
+        public TaskStatus Status { get; set; }
+        public Task(string name, TaskStatus status)
+        {
+            this.name = name;
+            this.Status = status;
+        }
+    }
+    public enum TaskStatus
+    {
+        Waiting,
+        Progress,
+        Done,
+        Rejected,
+    }
     public class Student : Person
     {
+        private string group;
+        public string Group { get => group; }
+        private List<Task> tasks = new List<Task>();
 
-        protected String group;
-        protected List<Task> tasks;
-
-        public string Group { get => this.group; }
-
-        public Student(String name, int age, String group) : this(name, age, group, new List<Task> ())
+        public Student(string name, int age, string group) : base(name, age)
         {
             this.group = group;
-
-
         }
-
-        internal void AddTask(string v, TaskStatus waiting)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Student(String name, int age, String group, List<Task> tasks) : base(name, age)
+        public Student(string name, int age, string group, List<Task> tasks) : base(name, age)
         {
             this.group = group;
             this.tasks = tasks;
-
         }
-
+        public void AddTask(string TaskName, TaskStatus taskStatus)
+        {
+            tasks.Add(new Task(TaskName, taskStatus));
+        }
+        public void UpdateTask(int index, TaskStatus taskStatus)
+        {
+            tasks[index].Status = taskStatus;
+        }
         public override string ToString()
         {
-            return $"Student: {base.ToString()}";
-        }
-
-        internal void UpdateTask(int v, TaskStatus done)
-        {
-            throw new NotImplementedException();
+            return $"Student : {this.Name} {this.Age} \nGroup: {group} \nTasks: {tasks}\n";
         }
     }
-}
-=======
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace lab2
-{
-    public class Student : Person
+    public class Teacher : Person
     {
-
-        protected String group;
-        protected List<Task> tasks;
-
-        public string Group { get => this.group; }
-
-        public Student(String name, int age, String group) : this(name, age, group, new List<Task> ())
+        public Teacher(string name, int age) : base(name, age)
         {
-            this.group = group;
-
 
         }
-
-        internal void AddTask(string v, TaskStatus waiting)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Student(String name, int age, String group, List<Task> tasks) : base(name, age)
-        {
-            this.group = group;
-            this.tasks = tasks;
-
-        }
-
         public override string ToString()
         {
-            return $"Student: {base.ToString()}";
-        }
-
-        internal void UpdateTask(int v, TaskStatus done)
-        {
-            throw new NotImplementedException();
+            return $"Teacher : {this.Name} {this.Age}";
         }
     }
+    public class Classroom
+    {
+        private string name;
+        private Person[] persons;
+        public Classroom(string name, Person[] persons)
+        {
+            this.name = name;
+            this.persons = persons;
+        }
+        public override string ToString()
+        {
+            string toString = "";
+            foreach (Person person in persons)
+            {
+                toString += person.ToString() + "\n";
+            }
+            return $"Classroom: {name} {toString}";
+        }
+    }
+
+
 }
->>>>>>> 20a94b11db97ee0397c0cd48574142054d95e370
